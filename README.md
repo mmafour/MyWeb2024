@@ -1,6 +1,8 @@
 # MyWeb2024
 
 
+<hr>
+
 **참고자료
 
 - Tabbed Content with jQuery and CSS  ( https://codepen.io/cssjockey/pen/njywEE )
