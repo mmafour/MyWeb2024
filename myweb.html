@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYWEB</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="js/myweb.js"></script>
+  <link rel="stylesheet" href="css/myweb.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div id="h-date"></div>
+      <div id="h-time"></div>
+      <div id="h-setting">=￣ω￣=</div>
+      <ul id="h-setting-list">
+        <li id="theme-btn">테마 변경</li>
+        <li id="info-btn">나의 정보</li>
+      </ul>
+
+    </div>
+
+    <div class="main">
+
+      <div id="m-window-area">
+
+        <div class="m-window">
+          <div class="window-header">
+            <span class="close-button">X</span>
+          </div>
+
+          <div class="window-content active" id="home-tab" data-content="home">
+            <!--홈-->
+
+          </div>
+
+          <div class="window-content " id="gallery-tab" data-content="gallery">
+            <!--갤러리-->
+          </div>
+
+          <div class="window-content" id="video-tab" data-content="video">
+            <!--비디오-->
+            <p class="p-content text-colored">Play this video !</p>
+            <div class="video-player">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GBgJ6vZuHWM?si=X8QUvVRwKX1cBRvj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-sub-window" id="theme-window">
+          
+          <div class="window-header">
+            <span class="close-button">X</span>
+          </div>
+          <div class="window-content active">
+            <p class="p-content">배경 <small>background</small></p>
+            <div class="image-list">
+              <div class="bg-image" data-bg="1"></div>
+              <div class="bg-image" data-bg="2"></div>
+              <div class="bg-image" data-bg="3"></div>
+            </div>
+            
+            <!--
+            <p class="p-content">컬러 <small>color</small></p>
+            -->
+          </div>
+
+        </div>        
+        <div class="m-sub-window" id="info-window">
+          
+          <div class="window-header">
+            <span class="close-button">X</span>
+          </div>
+          <div class="window-content active">
+            
+            <img src="images/info-profile.png" alt=profile-image">
+            <p class="p-content">
+              <span class="span-label">NAME | </span>이민아<br>
+              <span class="span-label">EDUCATION | </span>공주대학교 컴퓨터공학부 소프트웨어전공<br>
+              <span class="span-label">PHONE NUMBER | </span>010-3626-1896<br>
+              <span class="span-label">EMAIL ADDRESS | </span>alsdk020209@naver.com<br>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="m-dock-area">
+        <ul id="dock-list">
+          <li><div class="dock-item" data-target="home"><p>Home</p></div></li>
+          <li><div class="dock-item" data-target="gallery"><p>Gallery</p></div></li>
+          <li><div class="dock-item" data-target="video"><p>Video</p></div></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="modal-area">
+      <div class="modal-box">
+        <div id="modal-image"></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

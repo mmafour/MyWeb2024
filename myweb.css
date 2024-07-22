@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  min-width: 320px;
+  overflow: hidden;  
+  background-image: url('');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*--헤더--*/
+.header {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between; /* 양옆 공백 없이 꽉 차게 */
+}
+
+#h-date, #h-time, #h-setting {
+  width: fit-content;
+  padding: 5px 20px;
+  color: white;
+  text-shadow: 0 0 5px rgb(150, 255, 109);
+}
+
+#h-setting {
+  cursor: pointer;
+}
+#h-setting-list {
+  background-color: rgba(159, 241, 255, 0.6);
+
+  display: none;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: 4%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 0 5px rgb(150, 255, 109);
+}
+#h-setting-list {
+  border-radius: 10px;
+  right: 1%;
+}
+#h-setting-list li {
+  padding: 10px 40px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#h-setting-list li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+#h-setting-list li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+#h-setting-list li:hover {
+  background-color: rgb(255, 230, 240);
+  color: rgb(0, 208, 255);
+}
+
+/*--메인--*/
+.main {
+  height: 90vh;
+  position: relative;
+}
+
+
+/*--Dock--*/
+#m-dock-area {
+  background-color: rgba(255,255,255, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  left: 5%;
+  padding: 10px;
+  border-radius: 10px;
+}
+#dock-list {
+  display: flex;
+  justify-content: center;
+}
+#dock-list li {
+  list-style: none;
+}
+.dock-item {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  text-align: center;
+  color: rgb(0, 208, 255);
+  font-size: 0.9em;
+}
+.dock-item:hover {
+  box-shadow: 0 0 20px rgb(54, 225, 255);
+}
+.dock-item:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 20px rgb(150, 255, 109);
+}
+.dock-item p {
+  line-height: 50px;
+}
+
+/* 태블릿 크기 */
+@media screen and (max-width: 768px) {
+
+  #m-dock-area {
+    width: fit-content;
+    height: 100%;
+    left: 10px;
+  }
+  #dock-list{
+    flex-direction: column;
+  }
+  .dock-item {
+    margin: 10px 0;
+  }
+}
+
+/*--윈도우--*/
+#m-window-area {
+  height: 100%;
+}
+.m-window {
+  background-color: rgba(255,255,255, 0.5);
+
+  position: relative;
+  width: 80vw;
+  max-width: 1000px;
+  height: 90%;
+  min-height: 500px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/*--서브 윈도우--*/
+.m-sub-window {
+  background-color: rgb(88, 230, 255);
+
+  display: none;
+  position: fixed;
+  top: 15vh;
+  left: 50%;
+  transform:translate(-50%);
+
+  width: 600px;
+  height: 400px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+.m-sub-window.active {
+  display: block;
+}
+.m-sub-window .window-content img{
+  width: 200px;
+}
+
+/* 태블릿 크기 */
+@media screen and (max-width: 768px) {
+
+  .m-window {
+    float: right;
+    margin-right: 2vw;
+    height: 90%;
+  }
+
+  .m-sub-window {
+    left: 100%;
+    transform:translate(-110%);
+    width: 70vw;
+    height: 400px;
+  }
+}
+
+/*--윈도우 헤더--*/
+.window-header {
+  background-color: rgb(179, 255, 149);
+
+  display: flex;
+  height: fit-content;
+  border-radius: 10px 10px 0 0;
+}
+.close-button {
+  background-color: white;
+
+  margin: 5px auto;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: rgb(0, 208, 255);
+}
+
+/*--윈도우 콘텐츠--*/
+.window-content {
+  border: 2px solid rgb(179, 255, 149);
+  border-radius: 5px;
+
+  height: 90%;
+  overflow: scroll;
+  padding: 10px;
+  margin: 10px;
+
+  display: none;
+  text-align: center;
+}
+.window-content.active {
+  display: block;
+}
+
+/*--홈 탭--*/
+
+
+/*--갤러리 탭--*/
+.gallery-image {
+  width: 180px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 2px;
+  display: inline-block;
+  border-radius: 3px;
+}
+@media (max-width: 500px) {
+  .gallery-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/*--비디오 탭--*/
+.video-player {
+  padding-top: 56.25%;
+  position: relative;
+  margin-top: 10px;
+}
+.video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform:translate(-50%);
+  width: 100%;
+  height: 100%;
+}
+.text-colored {
+  color: rgb(179, 255, 149);
+  font-weight: bold;
+  text-shadow: 0 0 10px rgb(255, 179, 235);
+}
+
+
+/*--서브 윈도우 콘텐츠--*/
+.p-content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+.span-label {
+  font-weight: bold;
+}
+.image-list {
+  padding: 10px;
+}
+.bg-image {
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 태블릿 크기 */
+@media screen and (max-width: 768px) {
+  .bg-image {
+    width: 90px;
+    height: 90px;
+  }
+}@media (max-width: 540px) {
+  .bg-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/*--모달 박스--*/
+.modal-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: none;
+}
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+#modal-image {
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  background-image: url('');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 500px) {
+  
+  #modal-image {
+    width: 80vw;
+    height: 80vw;
+  }
+}
